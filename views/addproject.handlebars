@@ -1,0 +1,16 @@
+<form action="/addproject" method="POST">
+    <label class="label-input" for="projectname">Project name: </label>
+    <input class="form-control" type="text" name="projectname" id="projectname" required><br>
+
+    <input class="btn btn-default" type="submit">
+</form>
+
+<hr>
+<div id="list_of_projects">
+    <p>List of projects:</p>
+    <ul>
+        {{#each projects}}
+            <li>{{this.projectname}}</li>
+        {{/each}}
+    </ul>
+</div>

@@ -1,0 +1,23 @@
+<div id="export_main_div">
+    <form id="expor_form" action="/export" method="POST">
+        <label class="label-input" for="users_input">Select user: </label>
+        <select class="form-control" id="users_input" name="selecteduser" required>
+                <option default value=""></option>
+            {{#each users}}
+                <option value="{{this.username}}">{{this.username}}</option>
+            {{/each}}
+        </select>
+        <label class="label-input" for="proj_input">Select project: </label>
+        <select class="form-control" id="proj_input" name="selectedproject" required>
+                <option default value=""></option>
+            {{#each projects}}
+                <option value="{{this.projectname}}">{{this.projectname}}</option>
+            {{/each}}
+        </select>
+        <label class="label-input">Date between :</label>
+        <input class="form-control" id="first_hours_input" type="date" name="datefrom" required>
+        <p>&amp;</p>
+        <input class="form-control" id="second_hours_input" type="date" name="dateto" required>
+        <button class="btn btn-default" type="submit">Export as excel</button>
+    </form>
+</div>

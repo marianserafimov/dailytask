@@ -1,0 +1,15 @@
+<div class="tasks-nav">
+    <div>Project</div>
+    <div>Task type</div>
+    <div>Hours</div>
+</div>
+
+{{#each dailytasks}}
+    <div class="tasks">
+        <div>{{this.project}}</div>
+        <div>{{this.tasktype}}</div>
+        <div>{{this.hours}}</div>
+    </div>
+{{/each}}
+
+

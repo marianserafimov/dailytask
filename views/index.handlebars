@@ -1,0 +1,59 @@
+{{#if user}}                    {{!-- SUBMIT DAILY TASK FORM --}}
+    <div id="welcome">Welcome {{user.username}}!</div>
+    <form onsubmit="return validate(this);" id="add_daily_task_form" method="POST" action='/adddailytask'>
+        <label class="label-input" for="date_input">Date: </label>
+        <input class="form-control" id="date_input" type="date" name="date" class="form" required>
+        <label class="label-input" for="project_input">Project: </label>
+        <select class="form-control" id="project_input" name="projectname" id="projectstodo" required>
+            <option default value=""></option>
+            {{#each projects}}
+                <option value="{{this.projectname}}">{{this.projectname}}</option>
+            {{/each}}
+        </select>
+        <label class="label-input" for="tasktype">Task type: </label>
+        <select class="form-control"  name="tasktype" id="tasktype_input" required>
+            <option value="Developer">Development</option>
+            <option value="Research">Research</option>
+            <option value="Discussion">Discussion</option>
+            <option value="Design">Design</option>
+        </select>
+        <label class="label-input" for="description_input">Description: </label>
+        ​<textarea class="form-control" id="description_input" name="description" placeholder="description" rows="10" cols="70"></textarea><br>
+        <label class="label-input" for="hours_input">Hours: </label>
+        <input class="form-control" id="hours_input" type="number" name="hours" required>
+        <input id="username_input" style="display: none;" type="text" value="{{user.username}}" name="username" required>
+        <button class="btn btn-default" type="submit">Send</button>
+    </form>
+    
+    <script>
+        function validate(form) {
+            var username_input = document.getElementById('username_input').value;
+            var project_input = document.getElementById('project_input').value;
+            var description_input = document.getElementById('description_input').value;
+            var tasktype_input = document.getElementById('tasktype_input').value;
+            var hours_input = document.getElementById('hours_input').value;
+            var date_input = document.getElementById('date_input').value;
+            console.log(username_input)
+
+            var valid = true;
+
+            if(!valid) {
+                alert('Please correct the errors in the form!');
+                return false;
+            }
+            else {
+                return confirm('Hello ' + username_input + '!' 
+                    + '. \u000dProject: ' + project_input
+                    + '\u000dDescription: ' + description_input
+                    + ' \u000dDate: ' + date_input
+                    + '. \u000dTask type: ' + tasktype_input 
+                    + '\u000dHours: ' + hours_input
+                );
+            }
+        }
+    </script> {{!-- SUBMIT DAILY TASK FORM --}}
+ 
+{{else}}
+    <li role="presentation"><a href="/users/login">Login</a></li>
+    <li role="presentation"><a href="/users/register">Register</a></li>
+{{/if}}

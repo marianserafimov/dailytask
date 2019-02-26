@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'ubuntu-regular';
+    src:  url('../fonts/Ubuntu-Regular.woff');
+}
+
+@font-face {
+    font-family: 'ubuntu-bold';
+    src:  url('../fonts/Ubuntu-Bold.woff');
+}
+
+#expor_form input,
+#expor_form select{
+    margin-bottom: 20px;
+}
+
+#expor_form p{
+    font-family: 'ubuntu-regular';
+    font-weight: bold;
+    margin-left: 15%;
+}
+
+#first_hours_input{
+    margin-bottom: 6px !important;
+}
+
+#welcome{
+    font-family: ubuntu-regular;
+    font-size: 24px;
+    text-align: center;
+}
+
+#list_of_projects ul li{
+    font-family: ubuntu-regular;
+    font-size: 16px;
+}
+
+#list_of_projects p{
+    font-family: ubuntu-regular;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#main_container h3{
+    font-size: 40px;
+}
+
+.header-a{
+    font-size: 20px;
+}
+
+.label-input{
+    font-family: ubuntu-regular;
+    font-size: 18px;
+}
+
+#add_daily_task_form{
+    margin-top: 18px;
+}
+
+#add_daily_task_form select{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer{
+    text-align: center
+}
+
+#add_daily_task_form input{
+    display: block;
+    margin-bottom: 20px;
+}
+
+#description_input{
+    display: block;
+    height: 70px;
+    width: 30%;
+}
+
+#first_hours_input{
+     width: 30%;
+}
+
+#second_hours_input{
+    width: 30%;
+}
+
+.tasks-nav{
+    text-align: center;
+}
+
+.tasks-nav div{
+    display: inline-block;
+    font-size: 18px;
+    width: 21%;
+    font-family: ubuntu-regular;
+    font-weight: bold;
+}
+
+.tasks{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.tasks div{
+    display: inline-block;
+    font-size: 16px;
+    width: 21%;
+    font-family: ubuntu-regular;
+}

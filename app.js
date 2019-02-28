@@ -7,7 +7,6 @@ var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var json2xls = require('json2xls');
@@ -77,15 +76,12 @@ app.use(function (req, res, next) {
   next();
 });
 
-
-
 app.use('/', routes);
 app.use('/users', users);
 app.use('/adddailytask', routes);
 app.use('/addproject', routes);
 app.use('/export', routes);
 
-//Set Port
 app.set('port', (process.env.PORT || 3000));
 
 app.listen(app.get('port'), function(){

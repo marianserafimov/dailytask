@@ -8,9 +8,17 @@
 <hr>
 <div id="list_of_projects">
     <p>List of projects:</p>
-    <ul>
+    <ul id="projects">
         {{#each projects}}
-            <li>{{this.projectname}}</li>
+            <li class="each-project">
+                {{this.projectname}}
+
+                <form action="/project/delete" method="post">
+                    <input hidden value="{{this._id}}" name="projId">
+                    <button class="delete-proj" type="submit">X</button>
+                </form>
+            </li>
+            <hr>
         {{/each}}
     </ul>
 </div>

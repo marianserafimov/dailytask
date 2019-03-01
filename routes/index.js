@@ -15,8 +15,9 @@ router.get('/', ensureAuthenticated, homeController.getHome);
 router.post('/adddailytask', ensureAuthenticated, dailyTaskController.sendTask);
 
 //Get & Post => Add Project
-router.get('/addproject', addProjectController.addProjectGet);
-router.post('/addproject', ensureAuthenticated, addProjectController.addProjectPost);
+router.get('/addproject', isAdminFunc, addProjectController.addProjectGet);
+router.post('/addproject', isAdminFunc, addProjectController.addProjectPost);
+router.post('/project/delete', isAdminFunc, addProjectController.deleteProjectPost);
 
 //Get & Post => Export
 router.get('/export', isAdminFunc, exportController.getExport);
@@ -24,6 +25,7 @@ router.post('/export', isAdminFunc, exportController.postExport);
 
 //Get Tasks
 router.get('/tasks', ensureAuthenticated, tasksController.getTasks);
+
 
 //GLOBAL FUNCTIONS(middlewares)
 		//Check authentication

@@ -25,3 +25,7 @@ exports.addProjectPost = function (req, res) {
 		res.redirect('/addproject');
 	})
 }
+
+exports.deleteProjectPost = function (req, res) {
+	console.log(req);
+}

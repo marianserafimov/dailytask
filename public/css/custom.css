@@ -108,3 +108,23 @@
     width: 21%;
     font-family: ubuntu-regular;
 }
+
+#projects .each-project{
+    position: relative;
+    margin: 20px 0;
+}
+
+#projects .delete-proj{
+    position: absolute;
+    right: 2%;
+    top: 0;
+    border: 1px red solid;
+    color: red;
+    background-color: white
+}
+
+#projects .delete-proj:hover{
+    border: 1px white solid;
+    color: white;
+    background-color: red
+}

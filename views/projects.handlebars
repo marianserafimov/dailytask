@@ -2,7 +2,7 @@
     <label class="label-input" for="projectname">Project name: </label>
     <input class="form-control" type="text" name="projectname" id="projectname" required><br>
 
-    <input class="btn btn-default" type="submit">
+    <button class="btn btn-default" type="submit">Send</button>
 </form>
 
 <hr>
@@ -14,12 +14,12 @@
                 {{this.projectname}}
                 <form action="/projects/delete" method="post">
                     <input hidden value="{{this._id}}" name="projId">
-                    <button class="delete-proj" type="submit">X</button>
+                    <button class="delete-proj btn-default" type="submit">X</button>
                 </form>
                 <form class="edit-form" action="/projects/edit" method="post">
                     <input hidden value="{{this._id}}" name="projId">
                     <input type="text" name="newProjName">
-                    <button type="submit">edit</button>
+                    <button class="btn-default" type="submit">edit</button>
                 </form>
             </li>
             <hr>

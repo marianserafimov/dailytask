@@ -4,7 +4,7 @@ var router = express.Router();
 //Controllers
 const homeController = require('../controllers/home');
 const dailyTaskController = require('../controllers/dailytask');
-const addProjectController = require('../controllers/addproject');
+const ProjectController = require('../controllers/projects');
 const exportController = require('../controllers/export');
 const tasksController = require('../controllers/tasks');
 
@@ -15,9 +15,10 @@ router.get('/', ensureAuthenticated, homeController.getHome);
 router.post('/adddailytask', ensureAuthenticated, dailyTaskController.sendTask);
 
 //Get & Post => Add Project
-router.get('/addproject', isAdminFunc, addProjectController.addProjectGet);
-router.post('/addproject', isAdminFunc, addProjectController.addProjectPost);
-router.post('/project/delete', isAdminFunc, addProjectController.deleteProjectPost);
+router.get('/projects', isAdminFunc, ProjectController.addProjectGet);
+router.post('/projects/add', isAdminFunc, ProjectController.addProjectPost);
+router.post('/projects/delete', isAdminFunc, ProjectController.deleteProjectPost);
+router.post('/projects/edit', isAdminFunc, ProjectController.editProjectPost);
 
 //Get & Post => Export
 router.get('/export', isAdminFunc, exportController.getExport);
@@ -26,8 +27,7 @@ router.post('/export', isAdminFunc, exportController.postExport);
 //Get Tasks
 router.get('/tasks', ensureAuthenticated, tasksController.getTasks);
 
-
-//GLOBAL FUNCTIONS(middlewares)
+//GLOBAL FUNCTIONS (middlewares)
 		//Check authentication
 		function ensureAuthenticated(req, res, next){
 			if(req.isAuthenticated()){
@@ -50,5 +50,4 @@ router.get('/tasks', ensureAuthenticated, tasksController.getTasks);
 				res.redirect('/users/login');
 		}
 	
-
 module.exports = router;

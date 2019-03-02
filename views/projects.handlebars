@@ -1,4 +1,4 @@
-<form action="/addproject" method="POST">
+<form action="/projects/add" method="POST">
     <label class="label-input" for="projectname">Project name: </label>
     <input class="form-control" type="text" name="projectname" id="projectname" required><br>
 
@@ -12,10 +12,14 @@
         {{#each projects}}
             <li class="each-project">
                 {{this.projectname}}
-
-                <form action="/project/delete" method="post">
+                <form action="/projects/delete" method="post">
                     <input hidden value="{{this._id}}" name="projId">
                     <button class="delete-proj" type="submit">X</button>
+                </form>
+                <form class="edit-form" action="/projects/edit" method="post">
+                    <input hidden value="{{this._id}}" name="projId">
+                    <input type="text" name="newProjName">
+                    <button type="submit">edit</button>
                 </form>
             </li>
             <hr>
